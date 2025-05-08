@@ -1,0 +1,92 @@
+/* Set a full-screen background image with a subtle dark overlay */
+body {
+    background-image: url("station.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay to make text stand out */
+}
+
+/* Add some style to the main container */
+.container {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Heading style */
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 2.5em;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Adds a dark shadow for text depth */
+}
+
+/* Styling for the count number */
+h2 {
+    font-size: 3.5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #FF6347; /* Vibrant tomato color */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Adds a dark shadow for better contrast */
+}
+
+/* Style for the buttons */
+button {
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-weight: bold;
+    width: 250px;
+    margin: 20px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth animation for hover effects */
+    font-size: 1.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adds shadow for a floating effect */
+}
+
+/* Increment button style */
+#increment-btn {
+    background: linear-gradient(45deg, #ff4e50, #f9d423); /* Gradient effect */
+}
+
+/* Hover effect for increment button */
+#increment-btn:hover {
+    background: linear-gradient(45deg, #ff7a7f, #f9c138); /* Lighter gradient on hover */
+    transform: scale(1.1); /* Slight scale-up on hover for interaction feedback */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* Save button style */
+#save-btn {
+    background: linear-gradient(45deg, #43cea2, #185a9d); /* Cool gradient effect */
+}
+
+/* Hover effect for save button */
+#save-btn:hover {
+    background: linear-gradient(45deg, #4cb8c4, #2e69a9); /* Lighter gradient on hover */
+    transform: scale(1.1); /* Slight scale-up on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* Style for the saved entries text */
+#save-el {
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 20px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for text */
+}
