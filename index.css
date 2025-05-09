@@ -1,9 +1,6 @@
 G\Downloads\Scrim-s04jga7\style.css */
 body {
-    background-image: url('station.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -13,12 +10,19 @@ body {
 }
 
 .container {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     padding: 2.5rem 2rem;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 340px;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
 }
 
 h1 {
@@ -26,17 +30,25 @@ h1 {
     color: #4f3c8d;
     font-weight: 700;
     letter-spacing: 1px;
+    font-size: 2.2rem;
 }
 
 .counter-display {
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #764ba2;
     margin-bottom: 1.5rem;
     font-weight: bold;
-    border: 2px solid #764ba2;
-    border-radius: 12px;
+    border: 3px solid #764ba2;
+    border-radius: 16px;
     padding: 0.5em 0;
     background: #f3f0fa;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.counter-display:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.2);
 }
 
 .button-group {
@@ -44,50 +56,109 @@ h1 {
     gap: 1rem;
     justify-content: center;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .btn {
-    padding: 0.7em 1.5em;
+    padding: 0.8em 1.8em;
     font-size: 1.1rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     font-weight: 600;
-    transition: background 0.2s, color 0.2s;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 .increment {
     background: #667eea;
     color: #fff;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .increment:hover {
     background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 .save {
     background: #764ba2;
     color: #fff;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
 }
 
 .save:hover {
     background: #5f3fa2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+}
+
+.reset {
+    background: #e53e3e;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+}
+
+.reset:hover {
+    background: #c53030;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
 }
 
 .history-title {
     margin: 1.2rem 0 0.5rem 0;
     color: #4f3c8d;
-    font-size: 1.05rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .history {
     min-height: 2.5rem;
     background: #f3f0fa;
-    border-radius: 8px;
-    padding: 0.7em;
+    border-radius: 12px;
+    padding: 1em;
     color: #333;
     font-size: 1.1rem;
     text-align: left;
     word-break: break-all;
+    border: 2px solid #764ba2;
+    transition: all 0.3s ease;
+}
+
+.history:hover {
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.counter-display.pulse {
+    animation: pulse 0.3s ease;
 }
